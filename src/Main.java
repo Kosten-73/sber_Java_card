@@ -72,10 +72,6 @@ public class Main {
             int year = 1950 + (int)(Math.random() * (2010 - 1950 + 1));
             int mount = 1 + (int)(Math.random() * 12);
             int day = 1 + (int)(Math.random() * 31);
-            /*System.out.println(day);
-            System.out.println(mount);
-            System.out.println(year);
-            System.out.println(!osnova(day, mount, year));*/
             while (!osnova(day, mount, year)){
                 day = 1 + (int)(Math.random() * 31);
             }
@@ -83,8 +79,22 @@ public class Main {
                     generateRandomEmail(),
                     LocalDate.of(year, mount, day));
         }
-        for (int i = 1; i < clients.length - 1; i++){
+        for (int i = 0; i < clients.length - 1; i++){
             System.out.println(clients[i].toString());
+        }
+
+        bank_card[] b_c = new bank_card[randomNumberClient];
+        for (int i = 0; i < randomNumberClient - 1; i++){
+            int year1 = 2020 + (int)(Math.random() * (2024 - 2020 + 1));
+            int mount1 = 1 + (int)(Math.random() * 12);
+            int day1 = 1 + (int)(Math.random() * 31);
+            while (!osnova(day1, mount1, year1)){
+                day1 = 1 + (int)(Math.random() * 31);
+            }
+            b_c[i] = new bank_card(clients[i], year1, mount1, day1);
+        }
+        for (int i = 0; i < randomNumberClient; i++){
+            System.out.println(b_c[i].toString());
         }
     }
 }

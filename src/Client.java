@@ -1,13 +1,16 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.UUID;
 
 public class Client {
+    private String id;
     private String fio;
     private int age;
     private String email;
     private LocalDate data_birth;
 
     public Client(String fio, String email, LocalDate data_birth) {
+        this.id = UUID.randomUUID().toString();
         this.fio = fio;
         this.email = email;
         this.data_birth = data_birth;
@@ -17,11 +20,13 @@ public class Client {
     public String getFio() {
         return fio;
     }
+    public String getId() {
+        return id;
+    }
 
     public void setFio(String fio) {
         this.fio = fio;
     }
-
 
     public void setAge(int age) {
         this.age = age;
@@ -50,6 +55,7 @@ public class Client {
                 ", возраст=" + age +
                 ", почта='" + email + '\'' +
                 ", дата рожения=" + data_birth +
+                ", id = " + id +
                 '}';
     }
 }
