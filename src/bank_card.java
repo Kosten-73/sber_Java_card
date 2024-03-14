@@ -7,7 +7,7 @@ public class bank_card {
     private LocalDate expiration_date;
     private LocalDate data_issue;
 
-    private static String generateUUIDBased16DigitNumber() {
+    static String generateUUIDBased16DigitNumber() {
         UUID uuid = UUID.randomUUID();
         long uuidAsLong = Math.abs(uuid.getMostSignificantBits());
         return String.format("%016d", uuidAsLong).substring(0, 16);
