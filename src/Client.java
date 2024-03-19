@@ -3,12 +3,30 @@ import java.time.Period;
 import java.util.UUID;
 
 public class Client {
+    /**
+     * Поле id клиента
+     */
     private String id;
+    /**
+     * Поле Фамилии Имени Отчества
+     */
     private String fio;
+    /**
+     * Поле возраста
+     */
     private int age;
+    /**
+     * Поле email'а для отправки смс
+     */
     private String email;
+    /**
+     * Поле даты рождения
+     */
     private LocalDate data_birth;
 
+    /**
+     * Конструктор
+     */
     public Client(String fio, String email, LocalDate data_birth) {
         this.id = UUID.randomUUID().toString();
         this.fio = fio;

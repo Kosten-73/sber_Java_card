@@ -5,10 +5,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
+    /**
+     * Функция проверки высокостного года
+     */
     public static boolean isLeapYear(int got){
         return (got % 4 == 0 && got % 100 != 0) || got % 400 == 0;
     }
-
+    /**
+     * Функция проверки корректноски даты для клиента
+     */
     public static boolean osnova(int day, int month, int year){
         if (1 <= day && day <= 31 && 1950 <= year && year <= 2010 && 1 <= month && month <= 12) {
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
@@ -37,7 +42,9 @@ public class Main {
         }
         return false;
     }
-
+    /**
+     * Функция проверки корректноски даты для выпуска карты
+     */
     public static boolean osnova1(int day, int month, int year){
         if (1 <= day && day <= 31 && 2020 <= year && year <= 2024 && 1 <= month && month <= 12) {
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
@@ -66,7 +73,9 @@ public class Main {
         }
         return false;
     }
-
+    /**
+     * Функция генерации строки
+     */
     public static String generateRandomWord(int length) {
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
@@ -79,7 +88,9 @@ public class Main {
         }
         return sb.toString();
     }
-
+    /**
+     * Функция генерации email'а
+     */
     public static String generateRandomEmail() {
         StringBuilder sb = new StringBuilder();
         Random random = new Random();

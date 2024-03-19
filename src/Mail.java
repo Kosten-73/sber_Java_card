@@ -2,9 +2,18 @@ import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-public class Mail{
+public class Mail {
+    /**
+     * Поле отправителя
+     */
     private String out_man;
+    /**
+     * Поле получателя
+     */
     private String in_man;
+    /**
+     * Пароль отправителя
+     */
     private String out_password;
 
     public Mail(String in_man) {
@@ -13,7 +22,10 @@ public class Mail{
         this.in_man = in_man;
     }
 
-    public void mes_out(){
+    /**
+     * Метод для отправки сообщения о окончании действии карты
+     */
+    public void mes_out() {
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");

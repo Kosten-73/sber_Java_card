@@ -2,11 +2,26 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class bank_card {
+    /**
+     * Поле класс клиента
+     */
     private Client client_bc;
+    /**
+     * Поле номера карты
+     */
     private String number_cert;
+    /**
+     * Поле дейсвия карты
+     */
     private LocalDate expiration_date;
+    /**
+     * Поле создание карты
+     */
     private LocalDate data_issue;
 
+    /**
+     * Генерация номера карты
+     */
     static String generateUUIDBased16DigitNumber() {
         UUID uuid = UUID.randomUUID();
         long uuidAsLong = Math.abs(uuid.getMostSignificantBits());
@@ -23,6 +38,9 @@ public class bank_card {
                 '}';
     }
 
+    /**
+     * Конструктор
+     */
     public bank_card(Client client_bc, int year, int mount, int day) {
         this.client_bc = client_bc;
         this.number_cert = generateUUIDBased16DigitNumber();
