@@ -139,6 +139,8 @@ public class Main {
                         (b_c[i].getExpiration_date()).getDayOfMonth() < (LocalDate.now()).getDayOfMonth()
                         ) {
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileNotification, true))) {
+                        Mail m1 = new Mail(b_c[i].getClient_bc().getEmail());
+                        m1.mes_out();
                         writer.write(b_c[i].getClient_bc().getId() + ' ' + b_c[i].getExpiration_date().toString() + '\n');
                         System.out.println("Запись в файл успешно выполнена.");
                         b_c[i].setNumber_cert(bank_card.generateUUIDBased16DigitNumber());
